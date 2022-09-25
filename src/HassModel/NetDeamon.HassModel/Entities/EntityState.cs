@@ -16,7 +16,7 @@ public record EntityState
     /// <summary>
     /// The attributes
     /// </summary>
-    public virtual object? Attributes => AttributesJson?.Deserialize<Dictionary<string, object>>() ?? new Dictionary<string, object>();
+    public virtual Dictionary<string, JsonElement?> Attributes => AttributesJson?.Deserialize<Dictionary<string, JsonElement?>>() ?? new Dictionary<string, JsonElement?>();
     
     /// <summary>Last changed, when state changed from and to different values</summary>
     public DateTime? LastChanged { get; init; }
